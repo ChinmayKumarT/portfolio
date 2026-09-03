@@ -29,6 +29,7 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
       <p class="hero-where">Bengaluru, India · B.Tech AI &amp; ML, 2026</p>
       <h1 id="hero-title">
         <span class="line"><span>I build machine‑learning</span></span>
@@ -44,12 +45,19 @@
         Looking for an AI/ML engineering internship in NLP, search, entity resolution or document intelligence.
         <a href="mailto:chinmaykumart6755@gmail.com">Write to me</a>
       </p>
+      </div>
+      <div class="hero-object" aria-hidden="true">
+        <canvas id="hero-canvas"></canvas>
+      </div>
     </section>
 
     <section id="work" class="work" aria-labelledby="work-title">
       <h2 id="work-title">Three things I built and put online</h2>
 
       <article class="project">
+        <figure class="project-figure">
+          <img src="img/erp.png" alt="Sign-in screen of the Deva Construction platform" width="1440" height="900" loading="lazy" decoding="async">
+        </figure>
         <div class="project-head">
           <h3>Construction ERP Platform</h3>
           <a class="live" href="https://deva-demo.vercel.app" target="_blank" rel="noopener">deva-demo.vercel.app</a>
@@ -72,6 +80,9 @@
       </article>
 
       <article class="project">
+        <figure class="project-figure">
+          <img src="img/codedoc.png" alt="Code Documentation Generator upload screen" width="1440" height="900" loading="lazy" decoding="async">
+        </figure>
         <div class="project-head">
           <h3>AI Code Documentation System</h3>
           <a class="live" href="https://code-doc-generator-gj97.onrender.com" target="_blank" rel="noopener">code-doc-generator-gj97.onrender.com</a>
@@ -94,6 +105,9 @@
       </article>
 
       <article class="project">
+        <figure class="project-figure">
+          <img src="img/churn.png" alt="Customer churn prediction web interface" width="1440" height="900" loading="lazy" decoding="async">
+        </figure>
         <div class="project-head">
           <h3>Customer Churn Prediction Service</h3>
           <a class="live" href="https://customerchurn-ckt.netlify.app" target="_blank" rel="noopener">customerchurn-ckt.netlify.app</a>
@@ -194,6 +208,7 @@
     <p>Set in Fraunces and Inter. No trackers.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
