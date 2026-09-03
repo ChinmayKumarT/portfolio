@@ -589,24 +589,28 @@ h1 .em {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: .8rem;
+  gap: .75rem;
   aspect-ratio: 4 / 3;
   padding: 1rem .75rem;
-  background: var(--ink-soft);
-  color: var(--paper);
-  border: 1px solid color-mix(in srgb, var(--ink-soft) 70%, var(--paper));
-  border-radius: 10px;
-  box-shadow: 0 12px 28px -18px rgba(58, 52, 44, .55), 0 1px 3px -1px rgba(58, 52, 44, .25);
-  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out), background-color .25s var(--ease-out);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 55%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid color-mix(in srgb, var(--sage) 65%, transparent);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px -20px rgba(58, 52, 44, .5);
+  transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out),
+              background-color .25s var(--ease-out), border-color .25s var(--ease-out);
 }
 .skill:hover {
   transform: translateY(-3px);
-  background: var(--ink);
-  box-shadow: 0 20px 36px -18px rgba(58, 52, 44, .6), 0 2px 4px -1px rgba(58, 52, 44, .3);
+  background: color-mix(in srgb, var(--paper) 82%, transparent);
+  border-color: var(--sage-deep);
+  box-shadow: 0 18px 32px -22px rgba(58, 52, 44, .6);
 }
 .skill svg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   fill: var(--brand);
 }
 .skill span {
@@ -614,6 +618,7 @@ h1 .em {
   font-weight: 500;
   text-align: center;
   line-height: 1.2;
+  color: var(--ink-soft);
 }
 .skills-more {
   max-width: var(--measure);
