@@ -1,0 +1,28 @@
+[build]
+  publish = "."
+  command = ""
+
+# The page fetches these on every load. Without this they can be served from a
+# stale edge cache, so a CMS edit would not show up until the cache expired.
+[[headers]]
+  for = "/content/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/admin/config.yml"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Fingerprinted assets do not change under the same name, so they cache normally.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
