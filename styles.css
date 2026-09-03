@@ -633,10 +633,12 @@ h1 .em {
   border-color: var(--sage-deep);
   box-shadow: 0 18px 32px -22px rgba(58, 52, 44, .6);
 }
-.skill svg {
+.skill-icon {
   width: 2.25rem;
   height: 2.25rem;
-  fill: var(--brand);
+  background: var(--brand);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 .skill span {
   font-size: .9375rem;
@@ -668,4 +670,10 @@ h1 .em {
   .skill-grid { grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr)); gap: .7rem; }
   .skill svg { width: 2.1rem; height: 2.1rem; }
   .skill span { font-size: .875rem; }
+}
+
+.load-error {
+  margin: 0;
+  padding: 1rem 0;
+  color: var(--ink-soft);
 }

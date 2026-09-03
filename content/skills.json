@@ -1,0 +1,139 @@
+{
+  "skills": [
+    {
+      "name": "Python",
+      "icon": "img/icons/python.svg",
+      "color": "#3776AB"
+    },
+    {
+      "name": "TensorFlow",
+      "icon": "img/icons/tensorflow.svg",
+      "color": "#FF6F00"
+    },
+    {
+      "name": "Keras",
+      "icon": "img/icons/keras.svg",
+      "color": "#D00000"
+    },
+    {
+      "name": "Scikit-learn",
+      "icon": "img/icons/scikitlearn.svg",
+      "color": "#F7931E"
+    },
+    {
+      "name": "Transformers",
+      "icon": "img/icons/huggingface.svg",
+      "color": "#C08A00"
+    },
+    {
+      "name": "Pandas",
+      "icon": "img/icons/pandas.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "NumPy",
+      "icon": "img/icons/numpy.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Jupyter",
+      "icon": "img/icons/jupyter.svg",
+      "color": "#F37626"
+    },
+    {
+      "name": "Colab",
+      "icon": "img/icons/googlecolab.svg",
+      "color": "#D08A00"
+    },
+    {
+      "name": "Flask",
+      "icon": "img/icons/flask.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Docker",
+      "icon": "img/icons/docker.svg",
+      "color": "#2496ED"
+    },
+    {
+      "name": "GitHub Actions",
+      "icon": "img/icons/githubactions.svg",
+      "color": "#2088FF"
+    },
+    {
+      "name": "Git",
+      "icon": "img/icons/git.svg",
+      "color": "#F05032"
+    },
+    {
+      "name": "GitHub",
+      "icon": "img/icons/github.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Linux",
+      "icon": "img/icons/linux.svg",
+      "color": "#B8860B"
+    },
+    {
+      "name": "MySQL",
+      "icon": "img/icons/mysql.svg",
+      "color": "#4479A1"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "img/icons/postgresql.svg",
+      "color": "#4169E1"
+    },
+    {
+      "name": "Supabase",
+      "icon": "img/icons/supabase.svg",
+      "color": "#2E9E6B"
+    },
+    {
+      "name": "React",
+      "icon": "img/icons/react.svg",
+      "color": "#61DAFB"
+    },
+    {
+      "name": "Next.js",
+      "icon": "img/icons/nextdotjs.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "img/icons/javascript.svg",
+      "color": "#A89000"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "img/icons/tailwindcss.svg",
+      "color": "#0891B2"
+    },
+    {
+      "name": "Kotlin",
+      "icon": "img/icons/kotlin.svg",
+      "color": "#7F52FF"
+    },
+    {
+      "name": "Android",
+      "icon": "img/icons/android.svg",
+      "color": "#2A9D5C"
+    },
+    {
+      "name": "Netlify",
+      "icon": "img/icons/netlify.svg",
+      "color": "#00857C"
+    },
+    {
+      "name": "Render",
+      "icon": "img/icons/render.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Vercel",
+      "icon": "img/icons/vercel.svg",
+      "color": "#3a342c"
+    }
+  ]
+}

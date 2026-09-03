@@ -1,0 +1,105 @@
+{
+  "projects": [
+    {
+      "slug": "construction-erp",
+      "title": "Construction ERP Platform",
+      "url": "https://deva-demo.vercel.app",
+      "host": "deva-demo.vercel.app",
+      "summary": "A full ERP web application for a Bangalore turnkey residential construction business, replacing a workflow that ran on paper and spreadsheets.",
+      "points": [
+        "Modelled property, project and vendor records across an 11-stage construction lifecycle, from marking and CAD to handover, with stage-wise approvals and payment schedules.",
+        "Role-based access for admin, client, vendor, worker and site engineer.",
+        "Document management and reporting across materials, labour, expenses and payments."
+      ],
+      "meta": [
+        {
+          "label": "Stack",
+          "value": "React, Tailwind, JavaScript"
+        },
+        {
+          "label": "For",
+          "value": "A real client, in production"
+        }
+      ],
+      "results": []
+    },
+    {
+      "slug": "deva-construction-website",
+      "title": "Deva Construction Website",
+      "url": "https://devaconstructions.in",
+      "host": "devaconstructions.in",
+      "summary": "The public face of the same construction business: a marketing site with a scroll-driven walkthrough hero and a project showcase the owner updates himself.",
+      "points": [
+        "Built a frame pipeline that turns a rendered walkthrough into two WebP sequences (desktop and mobile) and scrubs them with scroll, so the hero plays like video without shipping one.",
+        "Project showcase reads published projects from Supabase behind row-level security, with an admin endpoint for adding new work and a proper empty state when nothing is live yet.",
+        "Contact form, services and about pages, sitemap and robots for search, and a custom domain with DNS and apex-to-www redirects set up on Vercel."
+      ],
+      "meta": [
+        {
+          "label": "Stack",
+          "value": "Next.js 15, React 19, Tailwind 4, Motion, Supabase"
+        },
+        {
+          "label": "For",
+          "value": "Deva Construction, live on its own domain"
+        }
+      ],
+      "results": []
+    },
+    {
+      "slug": "code-documentation",
+      "title": "AI Code Documentation System",
+      "url": "https://code-doc-generator-gj97.onrender.com",
+      "host": "code-doc-generator-gj97.onrender.com",
+      "summary": "An information-extraction pipeline that reads raw source files and writes the documentation a human would have skipped.",
+      "points": [
+        "Parses source into structured entities (classes, functions, variables) through AST analysis, across multiple languages.",
+        "Transformer-based sequence models generate contextual natural-language summaries from the extracted structure.",
+        "Output as HTML, Markdown and PDF through a Flask interface."
+      ],
+      "meta": [
+        {
+          "label": "Stack",
+          "value": "Transformers, LLMs, Python, Flask, NLTK, AST"
+        },
+        {
+          "label": "Kind",
+          "value": "NLP · document intelligence"
+        }
+      ],
+      "results": []
+    },
+    {
+      "slug": "customer-churn",
+      "title": "Customer Churn Prediction Service",
+      "url": "https://customerchurn-ckt.netlify.app",
+      "host": "customerchurn-ckt.netlify.app",
+      "summary": "Logistic regression benchmarked against a random forest, judged on the metric that matters for churn: recall on the customers who actually leave.",
+      "points": [
+        "Evaluated on ROC-AUC and minority-class recall; threshold chosen for the business, not the default.",
+        "SHAP attribution traces each prediction back to its input features and turns the output into retention recommendations.",
+        "Containerised with Docker and deployed publicly."
+      ],
+      "meta": [
+        {
+          "label": "Stack",
+          "value": "Python, Scikit-learn, SHAP, Docker"
+        },
+        {
+          "label": "Kind",
+          "value": "Classification · explainability"
+        }
+      ],
+      "results": [
+        {
+          "metric": "ROC-AUC",
+          "value": "0.84"
+        },
+        {
+          "metric": "Recall, churned class",
+          "value": "80%"
+        }
+      ]
+    }
+  ]
+}

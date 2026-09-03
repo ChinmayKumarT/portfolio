@@ -26,9 +26,10 @@ document.documentElement.classList.add("js");
 // Project pages: fill the Screens gallery from img/<project>/1.png, 2.png, ...
 // (also .jpg / .webp). Drop files in the folder; no HTML edits needed.
 // Stops at the first missing number. The section stays hidden when the folder is empty.
-(function () {
+function initScreens() {
   const section = document.getElementById("screens");
-  if (!section) return;
+  if (!section || section.dataset.ready) return;
+  section.dataset.ready = "1";
   const grid = section.querySelector(".screen-grid");
   const folder = section.dataset.folder;
   const exts = ["png", "jpg", "jpeg", "webp"];
@@ -61,7 +62,9 @@ document.documentElement.classList.add("js");
       section.hidden = false;
     }
   })();
-})();
+}
+initScreens();
+document.addEventListener("screens:ready", initScreens);
 
 // Mark the section currently in view in the masthead nav.
 const links = [...document.querySelectorAll(".masthead nav a")].filter((a) => a.getAttribute("href").startsWith("#"));
