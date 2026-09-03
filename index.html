@@ -13,13 +13,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Netlify Identity invite, recovery and confirmation links land on the site
-    // root. The password dialog lives in the CMS, so hand the token over to it.
+    // Netlify Identity invite, recovery and confirmation links land here with the
+    // token in the hash. The CMS rewrites the hash for its own router, so the
+    // dialog is opened here instead. The widget only loads when a token is present.
     (function () {
-      var h = location.hash;
-      if (/^#(invite|recovery|confirmation|email_change)_token=/.test(h)) {
-        location.replace("/admin/" + h);
-      }
+      if (!/^#(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) return;
+      var s = document.createElement("script");
+      s.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+      s.onload = function () {
+        if (!window.netlifyIdentity) return;
+        window.netlifyIdentity.on("login", function () { location.href = "/admin/"; });
+        window.netlifyIdentity.on("close", function () { location.href = "/admin/"; });
+      };
+      document.head.appendChild(s);
     })();
   </script>
 </head>
