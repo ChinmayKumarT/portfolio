@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Code Documentation System — Chinmay Kumar T</title>
+  <meta name="description" content="AI Code Documentation System, built by Chinmay Kumar T.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="detail">
+  <header class="masthead">
+    <a class="wordmark" href="../index.html" aria-label="Chinmay Kumar T, home">Chinmay Kumar T</a>
+    <nav aria-label="Sections">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="resume-link" href="../Chinmay_Kumar_T.pdf" download>Résumé <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="top">
+    <section class="detail-intro">
+      <a class="back" href="../index.html#work">All work</a>
+      <h1>AI Code Documentation System</h1>
+      <a class="live" href="https://code-doc-generator-gj97.onrender.com" target="_blank" rel="noopener">code-doc-generator-gj97.onrender.com</a>
+    </section>
+
+    <section class="detail-body">
+          <p class="project-what">
+            An information-extraction pipeline that reads raw source files and writes the documentation
+            a human would have skipped.
+          </p>
+          <ul class="project-points">
+            <li>Parses source into structured entities (classes, functions, variables) through AST analysis, across multiple languages.</li>
+            <li>Transformer-based sequence models generate contextual natural-language summaries from the extracted structure.</li>
+            <li>Output as HTML, Markdown and PDF through a Flask interface.</li>
+          </ul>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>Transformers, LLMs, Python, Flask, NLTK, AST</dd></div>
+            <div><dt>Kind</dt><dd>NLP · document intelligence</dd></div>
+          </dl>
+    </section>
+
+    <section class="screens" id="screens" data-folder="../img/code-documentation" hidden aria-labelledby="screens-title">
+      <h2 id="screens-title">Screens</h2>
+      <div class="screen-grid"></div>
+    </section>
+
+    <section class="detail-nav">
+      <a class="back" href="../index.html#work">Back to all work</a>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>Chinmay Kumar T · Bengaluru · <span id="year"></span></p>
+    <p>Set in Fraunces and Inter. No trackers.</p>
+  </footer>
+
+  <script src="../shader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

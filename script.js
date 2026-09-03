@@ -2,8 +2,48 @@ document.documentElement.classList.add("js");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Project pages: fill the Screens gallery from img/<project>/1.png, 2.png, ...
+// (also .jpg / .webp). Drop files in the folder; no HTML edits needed.
+// Stops at the first missing number. The section stays hidden when the folder is empty.
+(function () {
+  const section = document.getElementById("screens");
+  if (!section) return;
+  const grid = section.querySelector(".screen-grid");
+  const folder = section.dataset.folder;
+  const exts = ["png", "jpg", "jpeg", "webp"];
+
+  function tryLoad(n) {
+    let i = 0;
+    return new Promise((resolve) => {
+      const attempt = () => {
+        if (i >= exts.length) return resolve(null);
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => { i += 1; attempt(); };
+        img.src = folder + "/" + n + "." + exts[i];
+      };
+      attempt();
+    });
+  }
+
+  (async () => {
+    for (let n = 1; n <= 24; n += 1) {
+      const img = await tryLoad(n);
+      if (!img) break;
+      const fig = document.createElement("figure");
+      img.alt = "Screen " + n;
+      img.loading = "lazy";
+      img.decoding = "async";
+      if (n === 1 || img.naturalWidth > img.naturalHeight * 1.6) fig.classList.add("wide");
+      fig.appendChild(img);
+      grid.appendChild(fig);
+      section.hidden = false;
+    }
+  })();
+})();
+
 // Mark the section currently in view in the masthead nav.
-const links = [...document.querySelectorAll(".masthead nav a")];
+const links = [...document.querySelectorAll(".masthead nav a")].filter((a) => a.getAttribute("href").startsWith("#"));
 const sections = links
   .map((a) => document.querySelector(a.getAttribute("href")))
   .filter(Boolean);

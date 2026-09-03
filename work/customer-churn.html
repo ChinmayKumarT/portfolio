@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Churn Prediction Service — Chinmay Kumar T</title>
+  <meta name="description" content="Customer Churn Prediction Service, built by Chinmay Kumar T.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="detail">
+  <header class="masthead">
+    <a class="wordmark" href="../index.html" aria-label="Chinmay Kumar T, home">Chinmay Kumar T</a>
+    <nav aria-label="Sections">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="resume-link" href="../Chinmay_Kumar_T.pdf" download>Résumé <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="top">
+    <section class="detail-intro">
+      <a class="back" href="../index.html#work">All work</a>
+      <h1>Customer Churn Prediction Service</h1>
+      <a class="live" href="https://customerchurn-ckt.netlify.app" target="_blank" rel="noopener">customerchurn-ckt.netlify.app</a>
+    </section>
+
+    <section class="detail-body">
+          <p class="project-what">
+            Logistic regression benchmarked against a random forest, judged on the metric that
+            matters for churn: recall on the customers who actually leave.
+          </p>
+          <ul class="project-points">
+            <li>Evaluated on ROC-AUC and minority-class recall; threshold chosen for the business, not the default.</li>
+            <li>SHAP attribution traces each prediction back to its input features and turns the output into retention recommendations.</li>
+            <li>Containerised with Docker and deployed publicly.</li>
+          </ul>
+          <table class="results" aria-label="Model results">
+            <thead><tr><th scope="col">Metric</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>ROC-AUC</td><td><code>0.84</code></td></tr>
+              <tr><td>Recall, churned class</td><td><code>80%</code></td></tr>
+            </tbody>
+          </table>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>Python, Scikit-learn, SHAP, Docker</dd></div>
+            <div><dt>Kind</dt><dd>Classification · explainability</dd></div>
+          </dl>
+    </section>
+
+    <section class="screens" id="screens" data-folder="../img/customer-churn" hidden aria-labelledby="screens-title">
+      <h2 id="screens-title">Screens</h2>
+      <div class="screen-grid"></div>
+    </section>
+
+    <section class="detail-nav">
+      <a class="back" href="../index.html#work">Back to all work</a>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>Chinmay Kumar T · Bengaluru · <span id="year"></span></p>
+    <p>Set in Fraunces and Inter. No trackers.</p>
+  </footer>
+
+  <script src="../shader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
