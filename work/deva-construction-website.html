@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deva Construction Website — Chinmay Kumar T</title>
+  <meta name="description" content="Deva Construction Website, built by Chinmay Kumar T.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="detail">
+  <header class="masthead">
+    <a class="wordmark" href="../index.html" aria-label="Chinmay Kumar T, home">Chinmay Kumar T</a>
+    <nav aria-label="Sections">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="resume-link" href="../Chinmay_Kumar_T.pdf" download>Résumé <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="top">
+    <section class="detail-intro">
+      <a class="back" href="../index.html#work">All work</a>
+      <h1>Deva Construction Website</h1>
+      <a class="live" href="https://devaconstructions.in" target="_blank" rel="noopener">devaconstructions.in</a>
+    </section>
+
+    <section class="detail-body">
+          <p class="project-what">
+            The public face of the same construction business: a marketing site with a
+            scroll-driven walkthrough hero and a project showcase the owner updates himself.
+          </p>
+          <ul class="project-points">
+            <li>Built a frame pipeline that turns a rendered walkthrough into two WebP sequences (desktop and mobile) and scrubs them with scroll, so the hero plays like video without shipping one.</li>
+            <li>Project showcase reads published projects from Supabase behind row-level security, with an admin endpoint for adding new work and a proper empty state when nothing is live yet.</li>
+            <li>Contact form, services and about pages, sitemap and robots for search, and a custom domain with DNS and apex-to-www redirects set up on Vercel.</li>
+          </ul>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>Next.js 15, React 19, Tailwind 4, Motion, Supabase</dd></div>
+            <div><dt>For</dt><dd>Deva Construction, live on its own domain</dd></div>
+          </dl>
+    </section>
+
+    <section class="screens" id="screens" data-folder="../img/deva-construction-website" hidden aria-labelledby="screens-title">
+      <h2 id="screens-title">Screens</h2>
+      <div class="screen-grid"></div>
+    </section>
+
+    <section class="detail-nav">
+      <a class="back" href="../index.html#work">Back to all work</a>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>Chinmay Kumar T · Bengaluru · <span id="year"></span></p>
+    <p>Set in Fraunces and Inter. No trackers.</p>
+  </footer>
+
+  <script src="../shader.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

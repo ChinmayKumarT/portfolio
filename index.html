@@ -52,7 +52,7 @@
     </section>
 
     <section id="work" class="work" aria-labelledby="work-title">
-      <h2 id="work-title">Three things I built and put online</h2>
+      <h2 id="work-title">Four things I built and put online</h2>
 
       <article class="project">
         <div class="project-head">
@@ -74,6 +74,29 @@
             <div><dt>For</dt><dd>A real client, in production</dd></div>
           </dl>
           <a class="more" href="work/construction-erp.html">See the project</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3><a href="work/deva-construction-website.html">Deva Construction Website</a></h3>
+          <a class="live" href="https://devaconstructions.in" target="_blank" rel="noopener">devaconstructions.in</a>
+        </div>
+        <div class="project-body">
+          <p class="project-what">
+            The public face of the same construction business: a marketing site with a
+            scroll-driven walkthrough hero and a project showcase the owner updates himself.
+          </p>
+          <ul class="project-points">
+            <li>Built a frame pipeline that turns a rendered walkthrough into two WebP sequences (desktop and mobile) and scrubs them with scroll, so the hero plays like video without shipping one.</li>
+            <li>Project showcase reads published projects from Supabase behind row-level security, with an admin endpoint for adding new work and a proper empty state when nothing is live yet.</li>
+            <li>Contact form, services and about pages, sitemap and robots for search, and a custom domain with DNS and apex-to-www redirects set up on Vercel.</li>
+          </ul>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>Next.js 15, React 19, Tailwind 4, Motion, Supabase</dd></div>
+            <div><dt>For</dt><dd>Deva Construction, live on its own domain</dd></div>
+          </dl>
+          <a class="more" href="work/deva-construction-website.html">See the project</a>
         </div>
       </article>
 
