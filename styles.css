@@ -23,7 +23,6 @@
   --measure: 66ch;
   --gutter: clamp(1.25rem, 5vw, 4rem);
   --page: 1180px;
-  --edge: max(var(--gutter), calc((100% - var(--page)) / 2));
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -75,7 +74,7 @@ a:focus-visible, button:focus-visible {
   display: flex;
   align-items: baseline;
   gap: 2rem;
-  padding: 1.1rem var(--edge);
+  padding: 1.1rem var(--gutter);
   background: color-mix(in srgb, var(--paper) 86%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -111,7 +110,14 @@ a:focus-visible, button:focus-visible {
 
 /* ---------- Layout ---------- */
 
-main { padding: 0 var(--edge); }
+main { padding: 0 var(--gutter); }
+
+/* The hero and the page furniture run to the gutter; reading sections sit in a
+   centred column so the leftover width is shared, not dumped on the right. */
+section:not(.hero) {
+  max-width: var(--page);
+  margin-inline: auto;
+}
 
 section {
   padding-block: clamp(3.5rem, 8vw, 6.5rem);
@@ -168,7 +174,8 @@ h1 {
   line-height: 1.02;
   letter-spacing: -0.03em;
   margin: 0;
-  max-width: 14ch;
+  /* The line breaks are authored in the markup; no character cap re-wraps them. */
+  max-width: none;
 }
 h1 .line {
   display: block;
@@ -406,7 +413,7 @@ h1 .em {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem 2rem;
-  padding: 2.25rem var(--edge) 2.5rem;
+  padding: 2.25rem var(--gutter) 2.5rem;
   border-top: 1px solid var(--rule);
   background: var(--paper-deep);
   color: var(--ink-mute);
@@ -484,7 +491,6 @@ h1 .em {
   .contact-list { grid-template-columns: 1fr; }
   .contact-list li { grid-template-columns: 1fr; gap: .15rem; }
   .contact-list li:nth-last-child(2) { border-bottom: 0; }
-  h1 { max-width: none; }
 }
 
 
