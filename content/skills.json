@@ -33,7 +33,7 @@
     {
       "name": "LLM",
       "icon": "/img/icons/ml-llm.svg",
-      "color": "#000000"
+      "color": ""
     },
     {
       "name": "Python",
