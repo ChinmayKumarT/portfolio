@@ -85,6 +85,13 @@ collections:
               - name: icon
                 label: Icon
                 widget: image
+                media_folder: /img/icons
+                public_folder: /img/icons
                 media_library: { config: { multiple: false } }
-                hint: A single-colour SVG. The colour below is applied to it.
-              - { name: color, label: Colour, widget: string, pattern: ['^#[0-9A-Fa-f]{6}$', 'A hex colour such as #3776AB'], hint: 'Dark enough to read on the pale card.' }
+                hint: Pick one of the existing icons, or upload your own. Uploads must have a transparent background.
+              - name: color
+                label: Colour
+                widget: string
+                required: false
+                pattern: ['^(#[0-9A-Fa-f]{6})?$', 'A hex colour such as #3776AB, or leave empty']
+                hint: Tints a single-shape icon. Leave empty to show a full-colour logo unchanged.

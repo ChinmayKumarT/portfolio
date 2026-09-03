@@ -13,11 +13,14 @@
   function renderSkills(skills) {
     const grid = document.getElementById("skill-grid");
     if (!grid) return;
-    grid.innerHTML = skills.map((s) => `
-      <li class="skill" style="--brand: ${esc(s.color || "#3a342c")}">
-        <i class="skill-icon" style="--icon: url('${esc(asset(s.icon))}')" aria-hidden="true"></i>
-        <span>${esc(s.name)}</span>
-      </li>`).join("");
+    // A colour means the icon is a single-shape mark and gets tinted through a
+    // mask. No colour means it is a full-colour logo, shown as it is.
+    grid.innerHTML = skills.map((s) => {
+      const art = s.color
+        ? `<i class="skill-icon" style="--brand: ${esc(s.color)}; --icon: url('${esc(asset(s.icon))}')" aria-hidden="true"></i>`
+        : `<img class="skill-img" src="${esc(asset(s.icon))}" alt="" loading="lazy" decoding="async">`;
+      return `<li class="skill">${art}<span>${esc(s.name)}</span></li>`;
+    }).join("");
   }
 
   const icon = (p, cls) => (p.icon

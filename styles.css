@@ -675,6 +675,11 @@ h1 .em {
   border-color: var(--sage-deep);
   box-shadow: 0 18px 32px -22px rgba(58, 52, 44, .6);
 }
+.skill-img {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
+}
 .skill-icon {
   width: 2.25rem;
   height: 2.25rem;
