@@ -1,54 +1,19 @@
 {
   "skills": [
     {
-      "name": "Machine learning",
-      "icon": "img/icons/ml-neural-networks.svg",
-      "color": "#3a342c"
-    },
-    {
-      "name": "NLP",
-      "icon": "img/icons/ml-nlp.svg",
-      "color": "#3a342c"
-    },
-    {
-      "name": "Information extraction",
-      "icon": "img/icons/ml-information-extraction.svg",
-      "color": "#3a342c"
-    },
-    {
-      "name": "Model evaluation",
-      "icon": "img/icons/ml-evaluation.svg",
-      "color": "#3a342c"
-    },
-    {
-      "name": "Explainability",
-      "icon": "img/icons/ml-explainability.svg",
-      "color": "#3a342c"
-    },
-    {
-      "name": "Clustering",
-      "icon": "img/icons/ml-clustering.svg",
-      "color": "#3a342c"
-    },
-    {
       "name": "Python",
       "icon": "img/icons/python.svg",
       "color": "#3776AB"
     },
     {
-      "name": "TensorFlow",
-      "icon": "img/icons/tensorflow.svg",
-      "color": "#FF6F00"
+      "name": "Render",
+      "icon": "img/icons/render.svg",
+      "color": "#3a342c"
     },
     {
-      "name": "Keras",
-      "icon": "img/icons/keras.svg",
-      "color": "#D00000"
-    },
-    {
-      "name": "Scikit-learn",
-      "icon": "img/icons/scikitlearn.svg",
-      "color": "#F7931E"
+      "name": "Vercel",
+      "icon": "img/icons/vercel.svg",
+      "color": "#3a342c"
     },
     {
       "name": "Transformers",
@@ -74,11 +39,6 @@
       "name": "Colab",
       "icon": "img/icons/googlecolab.svg",
       "color": "#D08A00"
-    },
-    {
-      "name": "Flask",
-      "icon": "img/icons/flask.svg",
-      "color": "#3a342c"
     },
     {
       "name": "Docker",
@@ -121,6 +81,11 @@
       "color": "#2E9E6B"
     },
     {
+      "name": "Netlify",
+      "icon": "img/icons/netlify.svg",
+      "color": "#00857C"
+    },
+    {
       "name": "React",
       "icon": "img/icons/react.svg",
       "color": "#61DAFB"
@@ -151,19 +116,29 @@
       "color": "#2A9D5C"
     },
     {
-      "name": "Netlify",
-      "icon": "img/icons/netlify.svg",
-      "color": "#00857C"
+      "name": "Keras",
+      "icon": "img/icons/keras.svg",
+      "color": "#D00000"
     },
     {
-      "name": "Render",
-      "icon": "img/icons/render.svg",
+      "name": "Scikit-learn",
+      "icon": "img/icons/scikitlearn.svg",
+      "color": "#F7931E"
+    },
+    {
+      "name": "Flask",
+      "icon": "img/icons/flask.svg",
       "color": "#3a342c"
     },
     {
-      "name": "Vercel",
-      "icon": "img/icons/vercel.svg",
-      "color": "#3a342c"
+      "name": "TensorFlow",
+      "icon": "img/icons/tensorflow.svg",
+      "color": "#FF6F00"
+    },
+    {
+      "name": "LLM",
+      "icon": "https://pmecdn.protonweb.com/image-transformation/?s=c&image=images/f_auto,q_auto/v1756814050/wp-pme/llm_blog_cover2x-2/llm_blog_cover2x-2.png?_i=AA&width=1280&height=640",
+      "color": "#d9ead3"
     }
   ]
 }
