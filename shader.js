@@ -16,58 +16,70 @@
     void main() { gl_Position = vec4(p, 0.0, 1.0); }
   `;
   const frag = `
-    precision mediump float;
+    precision highp float;
     uniform vec2 u_res;
     uniform float u_time;
 
-    // Palette
-    const vec3 C0 = vec3(0.827, 0.922, 0.827); // #d3ebd3 light mint
-    const vec3 C1 = vec3(0.753, 0.859, 0.769); // #c0dbc4 mint
-    const vec3 C2 = vec3(0.627, 0.694, 0.667); // #a0b1aa grey-green
-    const vec3 C3 = vec3(0.573, 0.584, 0.541); // #92958a sage
-    const vec3 C4 = vec3(0.416, 0.376, 0.325); // #6a6053 taupe
+    // Palette, pushed to both ends so the field actually reads as light and shade.
+    const vec3 LIGHT = vec3(0.925, 0.980, 0.925); // lifted mint highlight
+    const vec3 MINT  = vec3(0.753, 0.859, 0.769); // #c0dbc4
+    const vec3 GREEN = vec3(0.627, 0.694, 0.667); // #a0b1aa
+    const vec3 SAGE  = vec3(0.573, 0.584, 0.541); // #92958a
+    const vec3 TAUPE = vec3(0.416, 0.376, 0.325); // #6a6053
 
-    vec3 hash3(vec2 p) {
-      vec3 q = vec3(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)), dot(p, vec2(419.2, 371.9)));
-      return fract(sin(q) * 43758.5453);
+    vec2 hash2(vec2 p) {
+      p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
+      return -1.0 + 2.0 * fract(sin(p) * 43758.5453);
     }
     float noise(vec2 p) {
       vec2 i = floor(p), f = fract(p);
       vec2 u = f * f * (3.0 - 2.0 * f);
-      float a = hash3(i).x, b = hash3(i + vec2(1.0, 0.0)).x;
-      float c = hash3(i + vec2(0.0, 1.0)).x, d = hash3(i + vec2(1.0, 1.0)).x;
-      return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+      return mix(mix(dot(hash2(i + vec2(0.0, 0.0)), f - vec2(0.0, 0.0)),
+                     dot(hash2(i + vec2(1.0, 0.0)), f - vec2(1.0, 0.0)), u.x),
+                 mix(dot(hash2(i + vec2(0.0, 1.0)), f - vec2(0.0, 1.0)),
+                     dot(hash2(i + vec2(1.0, 1.0)), f - vec2(1.0, 1.0)), u.x), u.y) * 0.5 + 0.5;
     }
     float fbm(vec2 p) {
-      float v = 0.0, a = 0.5;
+      float v = 0.0, a = 0.55;
       mat2 r = mat2(0.8, 0.6, -0.6, 0.8);
-      for (int i = 0; i < 5; i++) { v += a * noise(p); p = r * p * 2.0; a *= 0.5; }
+      for (int i = 0; i < 6; i++) { v += a * noise(p); p = r * p * 2.02; a *= 0.5; }
       return v;
     }
 
     void main() {
       vec2 uv = gl_FragCoord.xy / u_res;
-      vec2 p = uv * vec2(u_res.x / u_res.y, 1.0) * 1.6;
-      float t = u_time * 0.035;
+      vec2 p = uv * vec2(u_res.x / u_res.y, 1.0) * 2.2;
+      float t = u_time * 0.09;
 
-      vec2 q = vec2(fbm(p + t), fbm(p + vec2(5.2, 1.3) - t * 0.7));
-      vec2 r = vec2(fbm(p + 3.0 * q + vec2(1.7, 9.2) + t * 0.5), fbm(p + 3.0 * q + vec2(8.3, 2.8) - t * 0.3));
-      float f = fbm(p + 2.5 * r);
+      // Two warp passes give long, curling ribbons rather than a flat haze.
+      vec2 q = vec2(fbm(p + vec2(0.0, t)), fbm(p + vec2(4.7, -t * 0.8) + 2.3));
+      vec2 r = vec2(fbm(p + 2.6 * q + vec2(1.7, 9.2) + t * 0.6),
+                    fbm(p + 2.6 * q + vec2(8.3, 2.8) - t * 0.45));
+      float f = fbm(p + 3.2 * r);
 
-      // Keep the ground light: most of the field sits between C0 and C1.
-      vec3 col = mix(C0, C1, smoothstep(0.25, 0.75, f));
-      col = mix(col, C2, smoothstep(0.55, 0.95, length(r)) * 0.55);
-      col = mix(col, C3, smoothstep(0.75, 1.0, f) * 0.35);
-      // A faint taupe shadow that drifts across the lower half.
-      float shade = smoothstep(0.85, 1.05, q.x + (1.0 - uv.y) * 0.35);
-      col = mix(col, C4, shade * 0.12);
-      // Soft vignette toward the corners.
-      float vig = smoothstep(1.35, 0.35, length(uv - 0.5) * 1.15);
-      col = mix(col * 0.94, col, vig);
-      // Fine grain so the gradients do not band.
-      col += (hash3(gl_FragCoord.xy + u_time).x - 0.5) * 0.012;
+      // Aurora bands: sharp, moving contour lines through the warped field.
+      float band = sin((r.x * 2.6 + r.y * 1.9 + f * 3.4) * 6.2831 + t * 1.6);
+      band = smoothstep(0.15, 0.95, band * 0.5 + 0.5);
 
-      gl_FragColor = vec4(col, 1.0);
+      float shade = smoothstep(0.34, 0.92, f);
+      float deep = smoothstep(0.66, 1.05, f + length(r) * 0.30);
+
+      vec3 col = mix(LIGHT, MINT, shade);
+      col = mix(col, GREEN, deep * 0.55);
+      col = mix(col, SAGE, smoothstep(0.86, 1.15, f + q.y * 0.35) * 0.30);
+      col = mix(col, TAUPE, smoothstep(1.02, 1.35, f + r.x * 0.45) * 0.16);
+      // Bright ribbon edges catch the light where the bands crest.
+      col = mix(col, LIGHT, band * 0.55 * (1.0 - deep * 0.35));
+
+      // Directional sweep: a light source across the field, brightening only.
+      float sweep = smoothstep(1.25, -0.25, uv.x + uv.y * 0.5 + sin(t * 0.7) * 0.25);
+      col = mix(col, mix(col, LIGHT, 0.22), sweep);
+
+      float vig = smoothstep(1.40, 0.35, length(uv - 0.5) * 1.2);
+      col = mix(mix(col, GREEN, 0.16), col, vig);
+      col += (fract(sin(dot(gl_FragCoord.xy + u_time, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 0.014;
+
+      gl_FragColor = vec4(clamp(col, 0.0, 1.0), 1.0);
     }
   `;
 
@@ -95,7 +107,7 @@
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function resize() {
-    const scale = 0.5; // half resolution: the field is soft, and this keeps it cheap
+    const scale = 0.62; // slightly above half resolution: the field is soft, and this keeps it cheap
     canvas.width = Math.max(1, Math.floor(window.innerWidth * scale));
     canvas.height = Math.max(1, Math.floor(window.innerHeight * scale));
     gl.viewport(0, 0, canvas.width, canvas.height);
