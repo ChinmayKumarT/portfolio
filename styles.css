@@ -330,6 +330,7 @@ h1 .em {
 }
 .role .project-points,
 .role-body { max-width: var(--measure); }
+.role-body > .role-line:first-child { margin-bottom: 1.1rem; }
 .role-line {
   margin: 0 0 .5rem;
   color: var(--ink-soft);
