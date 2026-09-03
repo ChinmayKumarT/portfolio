@@ -1,6 +1,36 @@
 {
   "skills": [
     {
+      "name": "Machine learning",
+      "icon": "img/icons/ml-neural-networks.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "NLP",
+      "icon": "img/icons/ml-nlp.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Information extraction",
+      "icon": "img/icons/ml-information-extraction.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Model evaluation",
+      "icon": "img/icons/ml-evaluation.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Explainability",
+      "icon": "img/icons/ml-explainability.svg",
+      "color": "#3a342c"
+    },
+    {
+      "name": "Clustering",
+      "icon": "img/icons/ml-clustering.svg",
+      "color": "#3a342c"
+    },
+    {
       "name": "LLM",
       "icon": "/img/uploads/screenshot-2026-09-03-120148.svg",
       "color": "#000000"
