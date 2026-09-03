@@ -1,6 +1,11 @@
 {
   "skills": [
     {
+      "name": "LLM",
+      "icon": "https://pmecdn.protonweb.com/image-transformation/?s=c&image=images/f_auto,q_auto/v1756814050/wp-pme/llm_blog_cover2x-2/llm_blog_cover2x-2.png?_i=AA&width=1280&height=640",
+      "color": "#d9ead3"
+    },
+    {
       "name": "Python",
       "icon": "img/icons/python.svg",
       "color": "#3776AB"
@@ -134,11 +139,6 @@
       "name": "TensorFlow",
       "icon": "img/icons/tensorflow.svg",
       "color": "#FF6F00"
-    },
-    {
-      "name": "LLM",
-      "icon": "https://pmecdn.protonweb.com/image-transformation/?s=c&image=images/f_auto,q_auto/v1756814050/wp-pme/llm_blog_cover2x-2/llm_blog_cover2x-2.png?_i=AA&width=1280&height=640",
-      "color": "#d9ead3"
     }
   ]
 }
