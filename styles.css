@@ -719,3 +719,30 @@ h1 .em {
   padding: 1rem 0;
   color: var(--ink-soft);
 }
+
+/* ---------- Project icon ---------- */
+
+.project-icon {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: .7rem;
+  object-fit: contain;
+  padding: .35rem;
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sage) 65%, transparent);
+  border-radius: 9px;
+}
+.project-icon-lg {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 0;
+  flex: none;
+}
+.detail-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem 0 1rem;
+}
+.detail-title h1 { margin: 0; }

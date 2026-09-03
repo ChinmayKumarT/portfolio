@@ -20,6 +20,10 @@
       </li>`).join("");
   }
 
+  const icon = (p, cls) => (p.icon
+    ? `<img class="${cls}" src="${esc(asset(p.icon))}" alt="" width="40" height="40" loading="lazy" decoding="async">`
+    : "");
+
   function projectBody(p) {
     const points = (p.points || []).map((t) => `<li>${esc(t)}</li>`).join("");
     const meta = (p.meta || []).map((m) => `<div><dt>${esc(m.label)}</dt><dd>${esc(m.value)}</dd></div>`).join("");
@@ -39,6 +43,7 @@
     list.innerHTML = projects.map((p) => `
       <article class="project">
         <div class="project-head">
+          ${icon(p, "project-icon")}
           <h3><a href="${base}work/project.html?p=${encodeURIComponent(p.slug)}">${esc(p.title)}</a></h3>
           <a class="live" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.host)}</a>
         </div>
@@ -64,7 +69,7 @@
     root.innerHTML = `
       <section class="detail-intro">
         <a class="back" href="${base}index.html#experience">All work</a>
-        <h1>${esc(p.title)}</h1>
+        <div class="detail-title">${icon(p, "project-icon project-icon-lg")}<h1>${esc(p.title)}</h1></div>
         <a class="live" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.host)}</a>
       </section>
       <section class="detail-body">${projectBody(p)}</section>

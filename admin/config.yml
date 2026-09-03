@@ -39,6 +39,12 @@ collections:
                 hint: Used in the page address and as the screenshot folder name under img/.
               - { name: url, label: Live link, widget: string, hint: 'Full address, including https://' }
               - { name: host, label: Link text, widget: string, hint: 'What the link shows, e.g. deva-demo.vercel.app' }
+              - name: icon
+                label: Icon
+                widget: image
+                required: false
+                media_library: { config: { multiple: false } }
+                hint: Optional small mark shown beside the project title. A square logo or SVG works best.
               - { name: summary, label: Summary, widget: text }
               - name: points
                 label: Points
