@@ -8,6 +8,11 @@ document.getElementById("year").textContent = new Date().getFullYear();
   const set = () => document.documentElement.style.setProperty("--head-h", head.offsetHeight + "px");
   set();
   window.addEventListener("resize", set);
+  // The initial hash jump happened before the offset was known; redo it.
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) requestAnimationFrame(() => target.scrollIntoView({ behavior: "instant", block: "start" }));
+  }
 })();
 
 // Project pages: fill the Screens gallery from img/<project>/1.png, 2.png, ...
