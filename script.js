@@ -126,7 +126,7 @@ markCurrent();
   group.add(nodes);
 
   const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(3.0, 0.012, 8, 160),
+    new THREE.TorusGeometry(2.75, 0.012, 8, 160),
     new THREE.MeshBasicMaterial({ color: 0x92958a, transparent: true, opacity: 0.8 })
   );
   ring.rotation.x = Math.PI / 2.4;
@@ -140,11 +140,18 @@ markCurrent();
   rim.position.set(-4, -2, -3);
   scene.add(rim);
 
+  // The outer ring is the widest part, so the camera pulls back far enough to
+  // hold it in frame on the narrower axis, whatever shape the container takes.
+  const FIT_RADIUS = 2.88;
+
   function resize() {
     const w = host.clientWidth, h = host.clientHeight;
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
+    const vFov = (camera.fov * Math.PI) / 180;
+    const hFov = 2 * Math.atan(Math.tan(vFov / 2) * camera.aspect);
+    camera.position.z = FIT_RADIUS / Math.sin(Math.min(vFov, hFov) / 2);
     camera.updateProjectionMatrix();
   }
   resize();
