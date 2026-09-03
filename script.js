@@ -2,6 +2,14 @@ document.documentElement.classList.add("js");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Keep anchored sections clear of the sticky header, whatever height it wraps to.
+(function () {
+  const head = document.querySelector(".masthead");
+  const set = () => document.documentElement.style.setProperty("--head-h", head.offsetHeight + "px");
+  set();
+  window.addEventListener("resize", set);
+})();
+
 // Project pages: fill the Screens gallery from img/<project>/1.png, 2.png, ...
 // (also .jpg / .webp). Drop files in the folder; no HTML edits needed.
 // Stops at the first missing number. The section stays hidden when the folder is empty.
