@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chinmay Kumar T — AI/ML Engineer</title>
+  <meta name="description" content="Chinmay Kumar T builds complete AI/ML systems: preprocessing pipelines, transformer-based information extraction, evaluation, and containerised deployment. Bengaluru, India.">
+  <meta property="og:title" content="Chinmay Kumar T — AI/ML Engineer">
+  <meta property="og:description" content="AI/ML engineer in Bengaluru. NLP, information extraction, evaluation, deployment. Seeking an AI/ML engineering internship.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="masthead">
+    <a class="wordmark" href="#top" aria-label="Chinmay Kumar T, back to top">Chinmay Kumar T</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="resume-link" href="Chinmay_Kumar_T.pdf" download>Résumé <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="hero-where">Bengaluru, India · B.Tech AI &amp; ML, 2026</p>
+      <h1 id="hero-title">
+        <span class="line"><span>I build machine‑learning</span></span>
+        <span class="line"><span>systems that ship,</span></span>
+        <span class="line"><span class="em">not notebooks that stop.</span></span>
+      </h1>
+      <p class="hero-lede">
+        Data curation and preprocessing pipelines, transformer-based information extraction,
+        honest evaluation with precision, recall, F1 and error analysis, and containerised
+        deployment behind Flask APIs. Comfortable with raw, incomplete and inconsistent data.
+      </p>
+      <p class="hero-seeking">
+        Looking for an AI/ML engineering internship in NLP, search, entity resolution or document intelligence.
+        <a href="mailto:chinmaykumart6755@gmail.com">Write to me</a>
+      </p>
+    </section>
+
+    <section id="work" class="work" aria-labelledby="work-title">
+      <h2 id="work-title">Three things I built and put online</h2>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Construction ERP Platform</h3>
+          <a class="live" href="https://deva-demo.vercel.app" target="_blank" rel="noopener">deva-demo.vercel.app</a>
+        </div>
+        <div class="project-body">
+          <p class="project-what">
+            A full ERP web application for a Bangalore turnkey residential construction business,
+            replacing a workflow that ran on paper and spreadsheets.
+          </p>
+          <ul class="project-points">
+            <li>Modelled property, project and vendor records across an 11-stage construction lifecycle, from marking and CAD to handover, with stage-wise approvals and payment schedules.</li>
+            <li>Role-based access for admin, client, vendor, worker and site engineer.</li>
+            <li>Document management and reporting across materials, labour, expenses and payments.</li>
+          </ul>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>React, Tailwind, JavaScript</dd></div>
+            <div><dt>For</dt><dd>A real client, in production</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>AI Code Documentation System</h3>
+          <a class="live" href="https://code-doc-generator-gj97.onrender.com" target="_blank" rel="noopener">code-doc-generator-gj97.onrender.com</a>
+        </div>
+        <div class="project-body">
+          <p class="project-what">
+            An information-extraction pipeline that reads raw source files and writes the documentation
+            a human would have skipped.
+          </p>
+          <ul class="project-points">
+            <li>Parses source into structured entities (classes, functions, variables) through AST analysis, across multiple languages.</li>
+            <li>Transformer-based sequence models generate contextual natural-language summaries from the extracted structure.</li>
+            <li>Output as HTML, Markdown and PDF through a Flask interface.</li>
+          </ul>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>Transformers, LLMs, Python, Flask, NLTK, AST</dd></div>
+            <div><dt>Kind</dt><dd>NLP · document intelligence</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Customer Churn Prediction Service</h3>
+          <a class="live" href="https://customerchurn-ckt.netlify.app" target="_blank" rel="noopener">customerchurn-ckt.netlify.app</a>
+        </div>
+        <div class="project-body">
+          <p class="project-what">
+            Logistic regression benchmarked against a random forest, judged on the metric that
+            matters for churn: recall on the customers who actually leave.
+          </p>
+          <ul class="project-points">
+            <li>Evaluated on ROC-AUC and minority-class recall; threshold chosen for the business, not the default.</li>
+            <li>SHAP attribution traces each prediction back to its input features and turns the output into retention recommendations.</li>
+            <li>Containerised with Docker and deployed publicly.</li>
+          </ul>
+          <table class="results" aria-label="Model results">
+            <thead><tr><th scope="col">Metric</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr><td>ROC-AUC</td><td><code>0.84</code></td></tr>
+              <tr><td>Recall, churned class</td><td><code>80%</code></td></tr>
+            </tbody>
+          </table>
+          <dl class="project-meta">
+            <div><dt>Stack</dt><dd>Python, Scikit-learn, SHAP, Docker</dd></div>
+            <div><dt>Kind</dt><dd>Classification · explainability</dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <section id="experience" class="experience" aria-labelledby="exp-title">
+      <h2 id="exp-title">Experience</h2>
+      <article class="role">
+        <div class="role-head">
+          <h3>AI/ML Intern, Teknowgrade Pvt. Ltd.</h3>
+          <p class="role-when">Dec 2025 – Jan 2026</p>
+        </div>
+        <ul class="project-points">
+          <li>Built automated preprocessing and feature-extraction pipelines over real-world datasets, normalising inconsistent and incomplete fields before training.</li>
+          <li>Trained and evaluated models with Scikit-learn and TensorFlow, instrumenting loss and accuracy tracking to compare runs and diagnose underperforming configurations.</li>
+          <li>Integrated trained models against live production data and automated build and version-control checks across team repositories with GitHub Actions.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-head">
+          <h3>B.Tech, Artificial Intelligence and Machine Learning</h3>
+          <p class="role-when">Nov 2022 – May 2026</p>
+        </div>
+        <div class="role-body">
+          <p class="role-line">BGS Institute of Technology · CGPA 7.5 / 10</p>
+          <p class="role-line">Coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Data Analytics, Cloud Computing, DevOps.</p>
+          <p class="role-line">Organised 24-hour hackathons, led Coding Club initiatives in AI and cloud, and mentored junior AI/ML teams on project development and deployment.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills" class="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">What I work with</h2>
+      <dl class="skill-list">
+        <div><dt>Languages and core</dt><dd>Python, SQL, Git, Linux</dd></div>
+        <div><dt>AI and ML</dt><dd>Transformers and LLMs, NLP, information extraction, text normalisation, neural networks, CNNs, classification, regression, clustering</dd></div>
+        <div><dt>Frameworks and libraries</dt><dd>TensorFlow, Scikit-learn, Flask, NLTK, SHAP, Pandas, NumPy, Matplotlib, Seaborn</dd></div>
+        <div><dt>Evaluation</dt><dd>Precision, recall, F1, ROC-AUC, confusion matrices, error analysis, threshold selection, SHAP</dd></div>
+        <div><dt>Deployment and tooling</dt><dd>Docker, GitHub Actions, Render, Netlify, MySQL, Jupyter, Colab</dd></div>
+      </dl>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Let's talk</h2>
+      <p class="contact-lede">If you are hiring for NLP, search, entity resolution or document intelligence, I would like to hear about the problem.</p>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:chinmaykumart6755@gmail.com">chinmaykumart6755@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+919483876755">+91 94838 76755</a></li>
+        <li><span>GitHub</span><a href="https://github.com/ChinmayKumarT" target="_blank" rel="noopener">github.com/ChinmayKumarT</a></li>
+        <li><span>LinkedIn</span><a href="https://linkedin.com/in/chinmaykumart6755" target="_blank" rel="noopener">linkedin.com/in/chinmaykumart6755</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p>Chinmay Kumar T · Bengaluru · <span id="year"></span></p>
+    <p>Set in Fraunces and Inter. No trackers.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
