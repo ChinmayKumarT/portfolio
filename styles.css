@@ -396,19 +396,69 @@ h1 .em {
 .colophon {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
-  gap: .5rem 2rem;
-  padding: 2rem var(--gutter) 2.5rem;
+  gap: 1.25rem 2rem;
+  padding: 2.25rem var(--gutter) 2.5rem;
   border-top: 1px solid var(--rule);
   background: var(--paper-deep);
   color: var(--ink-mute);
-  font-size: .875rem;
+  font-size: .9375rem;
 }
 .colophon p { margin: 0; }
+.colophon strong { color: var(--ink); font-weight: 500; }
+.colophon-left {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1.25rem;
+}
+.colophon-left .made { display: inline-flex; align-items: center; gap: .35rem; }
+.colophon-left .clock {
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--rule);
+}
+.heart {
+  width: 1rem;
+  height: 1rem;
+  fill: #b3401e;
+  transform-origin: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .heart { animation: beat 1.6s ease-in-out infinite; }
+}
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.18); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  56% { transform: scale(1); }
+}
+.clock #local-time { font-variant-numeric: tabular-nums; }
+.mail-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .7rem 1.1rem;
+  border: 1px solid var(--sage);
+  border-radius: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+  transition: border-color .2s var(--ease-out), background-color .2s var(--ease-out), transform .2s var(--ease-out);
+}
+.mail-pill svg { width: 1.1rem; height: 1.1rem; fill: var(--ink-soft); }
+.mail-pill:hover {
+  border-color: var(--ink-soft);
+  background: var(--paper);
+  transform: translateY(-1px);
+}
 
 /* ---------- Responsive ---------- */
 
 @media (max-width: 760px) {
+  .colophon-left .clock { padding-left: 0; border-left: 0; }
+  .mail-pill { width: 100%; justify-content: center; overflow-wrap: anywhere; }
   .masthead {
     flex-wrap: wrap;
     gap: .5rem 1.25rem;

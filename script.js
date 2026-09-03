@@ -1,6 +1,14 @@
 document.documentElement.classList.add("js");
 
-document.getElementById("year").textContent = new Date().getFullYear();
+// Footer clock in Bengaluru time, ticking on the minute.
+(function () {
+  const el = document.getElementById("local-time");
+  if (!el) return;
+  const fmt = new Intl.DateTimeFormat("en-IN", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Kolkata" });
+  const tick = () => { el.textContent = fmt.format(new Date()).toUpperCase(); };
+  tick();
+  setTimeout(() => { tick(); setInterval(tick, 60000); }, (60 - new Date().getSeconds()) * 1000);
+})();
 
 // Keep anchored sections clear of the sticky header, whatever height it wraps to.
 (function () {
